@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <%@ page import="dto.Book" %>
 <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session"/>
@@ -9,8 +9,8 @@
 <html>
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<meta charset="EUC-KR">
-<title>µµ¼­Á¤º¸</title>
+<meta charset="utf-8">
+<title>ë„ì„œì •ë³´</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 		<%@ include file="menu.jsp" %>   	
 	<div class="p-5 mb-4 bg-body-tertiary rounded-3">
       	<div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">µµ¼­ Á¤º¸</h1>
+        <h1 class="display-5 fw-bold">ë„ì„œ ì •ë³´</h1>
         <p class="col-md-8 fs-4">Book Info</p>      
       	</div>
     </div>		
@@ -37,15 +37,15 @@
     	
     		<h3><b><%=book.getName()%> </b></h3> 
     		<p><%=book.getDescription() %>
-    		<p> <b>µµ¼­ÄÚµå:</b> <span class="badge text-bg-danger"><%=book.getBookId() %> </span>
-    		<p> <b>ÀúÀÚ</b> : <%=book.getAuthor() %>
-    		<p> <b>ÃâÆÇ»ç</b> : <%=book.getPublisher() %>
-    		<p> <b>ÃâÆÇÀÏ</b> : <%=book.getReleaseDate() %>
-    		<p> <b>ºÐ·ù</b> : <%=book.getCategory() %>
-    		<p> <b>Àç°í¼ö</b> : <%=book.getUnitsInStock() %>
-    		<h4><%= book.getUnitPrice()%>¿ø </h4>
-    		<a href="./books.jsp" class="btn btn-secondary"> µµ¼­ ¸ñ·Ï &raquo;</a>
-    		<a href="./books.jsp" class="btn btn-secondary"> Ã¥ »èÁ¦ &raquo;</a>
+    		<p> <b>ë„ì„œì½”ë“œ:</b> <span class="badge text-bg-danger"><%=book.getBookId() %> </span>
+    		<p> <b>ì €ìž</b> : <%=book.getAuthor() %>
+    		<p> <b>ì¶œíŒì‚¬</b> : <%=book.getPublisher() %>
+    		<p> <b>ì¶œíŒì¼</b> : <%=book.getReleaseDate() %>
+    		<p> <b>ë¶„ë¥˜</b> : <%=book.getCategory() %>
+    		<p> <b>ìž¬ê³ ìˆ˜</b> : <%=book.getUnitsInStock() %>
+    		<h4><%= book.getUnitPrice()%>ì› </h4>
+    		<a href="./books.jsp" class="btn btn-secondary"> ë„ì„œ ëª©ë¡ &raquo;</a>
+    		<a href="./books.jsp" class="btn btn-secondary"> ì±… ì‚­ì œ &raquo;</a>
 
 		</div>
 	</div>

@@ -1,34 +1,36 @@
-<%@ page import="java.util.Enumeration"%>
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository"%>
-<%@ page import = "com.oreilly.servlet.*"%>
-<%@ page import = "com.oreilly.servlet.multipart.*" %>
+<%@ page import="dto.Book" %>
+<%@ page import="dao.BookRepository" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
+<%@ page import="java.util.*" %>
 
 <%
-	String filename =" ";
+	request.setCharacterEncoding("UTF-8");
 
-	String realFolder = "D:\\minn0\\Documents\\JSP-Webbprogramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\JSPBook\\resources\\images";
+	String filename="";
 
-	int maxSize = 5 * 1024 * 1024; 
-	String encType = "utf-8"; 
-
-	MultipartRequest multi = new MultipartRequest(request,realFolder,maxSize,encType, new DefaultFileRenamePolicy());
+	String realFolder="D:\\minn0\\Documents\\JSP-Webbprogramming\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\JSPBook\\resources\\images";
 	
-	String bookId = multi.getParameter("bookId");
-	String name = multi.getParameter("name");
-	String unitPrice = multi.getParameter ("unitPrice");
-	String author = multi.getParameter("author");
-	String publisher = multi.getParameter("publisher");
-	String releaseDate = multi.getParameter("releaseDate");
-	String description = multi.getParameter("description");
-	String category = multi.getParameter("category");
-	String unitsInStock = multi.getParameter("unitsInStock");
-	String condition = multi.getParameter ("condition");
+	int maxSize = 5 * 1024 * 1024; //최대 업로드될 파일의 크기5Mb
+	String encType = "utf-8"; //인코딩 타입
 	
-	Enumeration files = multi.getFileNames();
-	String fname = (String)files.nextElement();
-	String fileName = multi.getFilesystemName(fname);
+	MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+	
+    String bookId=multi.getParameter("bookId");
+	String name=multi.getParameter("name");
+	String unitPrice=multi.getParameter("unitPrice");
+	String author=multi.getParameter("author");
+	String publisher=multi.getParameter("publisher");
+	String releaseDate=multi.getParameter("releaseDate");
+	String description=multi.getParameter("description");
+	String category=multi.getParameter("category");
+	String unitsInStock=multi.getParameter("unitsInStock");
+	String condition=multi.getParameter("condition");
+	
+	Enumeration files=multi.getFileNames();
+	String fname=(String) files.nextElement();
+	String fileName=multi.getFilesystemName(fname);
 
 	
 	int price;
@@ -43,7 +45,8 @@
 	if (unitsInStock.isEmpty())
 		stock = 0;
 	else
-		stock = Long.valueOf(unitsInStock);
+		stock = Long.valueOf(unitsInStock);	
+	
 	
 	BookRepository dao = BookRepository.getInstance();
 
@@ -58,7 +61,7 @@
 	newBook.setCategory(category);
 	newBook.setUnitsInStock(stock);
 	newBook.setCondition(condition);
-	newBook.setFilename(filename);
+	newBook.setFilename(fileName);
 
 	dao.addBook(newBook);
 

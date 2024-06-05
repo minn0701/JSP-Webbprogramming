@@ -22,37 +22,36 @@
 			<div class="mb-3 row">
 				<label class="col-sm-2">도서코드</label>
 				<div class="col-sm-3">
-					<input type="text" name="bookId" class="form-control" >
-				</div>
+					<input type="text" name="bookId" class="form-control" onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false; }">
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">도서명</label>
 				<div class="col-sm-3">
-					<input type="text" name="name" class="form-control" >
+					<input type="text" name="name" class="form-control" onblur="if(this.value==''){ alert('도서코드를 입력해주세요.');  return false;}">
 				</div>
 			</div>
 				<div class="mb-3 row">
 				<label class="col-sm-2">가격</label>
 				<div class="col-sm-3">
-					<input type="text" name="unitPrice" class="form-control" >
+					<input type="text" name="unitPrice" class="form-control"  onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}">
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">저자</label>
 				<div class="col-sm-3">
-					<input type="text" name="author" class="form-control">
+					<input type="text" name="author" class="form-control" onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}">
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">출판사</label>
 				<div class="col-sm-3">
-					<input type="text" name="publisher" class="form-control">
+					<input type="text" name="publisher" class="form-control" onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}">
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">출판일</label>
 				<div class="col-sm-3">
-					<input type="text" name="releaseDate" class="form-control">
+					<input type="text" name="releaseDate" class="form-control" onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}">
 				</div>
 			</div>
 	
@@ -60,13 +59,13 @@
 				<label class="col-sm-2">상세정보</label>
 				<div class="col-sm-5">
 					<textarea name="description" cols="50" rows="2"
-						class="form-control" placeholder="100자 이상 적어주세요"></textarea>
+						class="form-control" placeholder="100자 이상 적어주세요"  onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}"></textarea>
 				</div>
 			</div>			
 			<div class="mb-3 row">
 				<label class="col-sm-2">분류</label>
 				<div class="col-sm-3">
-					<input type="text" name="category" class="form-control" >
+					<input type="text" name="category" class="form-control"  onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}" >
 				</div>
 			</div>
 			
@@ -75,7 +74,7 @@
 			<div class="col-sm-3">
 			
 			
-					<input type="text" name="unitsInStock" class="form-control" >
+					<input type="text" name="unitsInStock" class="form-control"  onblur="if(this.value==''){ alert('도서코드를 입력해주세요.'); return false;}">
 				</div>
 			</div>
 			<div class="mb-3 row">

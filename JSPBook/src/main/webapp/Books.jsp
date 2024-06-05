@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="dto.Book" %>
 <%@ page import = "dao.BookRepository" %>
@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
  <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />   
 <title>도서 목록</title>
@@ -56,7 +56,7 @@
 				<h5><b><%=book.getName()%></b></h5>
 				<p><%=book.getAuthor()%>
 				<br> <%=book.getPublisher()%> | <%=book.getUnitPrice()%>원
-				<p> <%=book.getDescription().substring(0,60)%>...
+				<p> <%=book.getDescription()%>...
 				<p><%=book.getUnitPrice()%>원
 				<p><a href="./book.jsp?id=<%=book.getBookId()%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
 			</div>	
